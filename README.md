@@ -1,4 +1,4 @@
-To Sart the above app below are the step as followed;
+To Start the app in your local environment follow the 4 steps below;
 
 
 Step 1)  Open the app in Vs code 
