@@ -28,6 +28,11 @@
       "userId": 10,
       "title": "Licensed Metal Shirt",
       "id": 32
+    },
+    {
+      "userId": 8,
+      "title": "Awesome Metal Salad",
+      "id": 33
     }
   ],
   "photos": []
