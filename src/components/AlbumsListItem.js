@@ -1,34 +1,41 @@
-import { GoTrashcan } from 'react-icons/go';
-import { useRemoveAlbumMutation } from '../store';
-import Button from './Button';
-import ExpandablePanel from './ExpandablePanel';
-import PhotosList from './PhotosList';
+import Button from "./Button";
+import ExpandablePanel from "./ExpandablePanel";
+import { GoTrashcan } from "react-icons/go";
+import { useRemoveAlbumMutation } from "../store";
+import PhotosList from "./PhotosList";
 
-function AlbumsListItem({ album }) {
-  const [removeAlbum, results] = useRemoveAlbumMutation();
 
-  const handleRemoveAlbum = () => {
-    removeAlbum(album);
-  };
+function AlbumsListItem ({ album }){
+ 
+const [removeAlbum, results] = useRemoveAlbumMutation();
 
-  const header = (
+//return album.title; 
+
+const handleRemoveAlbum = () =>{
+removeAlbum(album);
+
+};
+
+const header = (
     <>
-      <Button
-        className="mr-2"
-        loading={results.isLoading}
-        onClick={handleRemoveAlbum}
-      >
+    <Button className="mr-2"  loading={results.isLoading}  onClick={handleRemoveAlbum}>
         <GoTrashcan />
-      </Button>
-      {album.title}
+    </Button>
+    {album.title}
     </>
-  );
+    );
 
-  return (
-    <ExpandablePanel key={album.id} header={header}>
-      <PhotosList album={album} />
-    </ExpandablePanel>
-  );
-}
+    
+      return (
+       
+        <ExpandablePanel key={album.id} header={header}>
+          <PhotosList album={album}/>
+        </ExpandablePanel>
+
+      );
+
+
+};
 
 export default AlbumsListItem;
+
